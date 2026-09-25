@@ -1,8 +1,11 @@
 import React from 'react';
 
-function ProductCard({ product }) {
+function ProductCard({ product, onAddToCart }) {
   const handleAddToCart = () => {
     console.log(`Added to cart: ${product.name}`);
+    if (onAddToCart) {
+      onAddToCart(product);
+    }
   };
 
   return (
